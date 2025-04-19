@@ -288,7 +288,7 @@ async def account_login(bot: Client, m: Message):
     subscription_data = read_subscription_data()
     if not any(user[0] == user_id for user in subscription_data):
         await m.reply_text("❌ You are not a premium user. Please upgrade your subscription! 💎")
-
+        return 
 async def arjun_command(client, message: Message):
     chat_id = message.chat.id
     await message.reply_text

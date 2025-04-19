@@ -328,6 +328,8 @@ async def account_login(bot: Client, m: Message):
             await m.reply_text("❌ You are not a premium user. Please upgrade your subscription! 💎")
             return
 
+  
+    # ... [Rest of the existing /arjun command code] ...
     # Rest of the /arjun command code remains unchanged
     editable = await m.reply_text("**Please Send TXT file for download**")
     input: Message = await bot.listen(editable.chat.id)
@@ -338,10 +340,7 @@ async def account_login(bot: Client, m: Message):
         x = decrypt_file_txt(y)
         await input.delete(True)
     else:
-        x = y
-
-    # ... [Rest of the existing /arjun command code] ...
-
+        x = y 
 
     path = f"./downloads/{m.chat.id}"
 

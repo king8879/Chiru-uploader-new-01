@@ -51,23 +51,20 @@ token_cp ='eyJjb3Vyc2VJZCI6IjQ1NjY4NyIsInR1dG9ySWQiOm51bGwsIm9yZ0lkIjo0ODA2MTksI
 async def account_login(bot: Client, m: Message):                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
     await m.reply_text('''🎉 <b>Welcome to DRM Bot! </b>🎉
     
-            🎉 <b>Congrats on Joining the Non-DRM Bot Family!</b> 🎉\n\n
-            <b><i>You now have access to download all Non-DRM+AES Encrypted URLs 🔐 including:</b></i>\n\n
-            <blockquote>
-            • 📚 <b>Appx Zip+Encrypted Url</b>\n
-            • 🎓 <b>Classplus DRM+ NDRM</b>\n
-            • 🧑‍🏫 <b>PhysicsWallah DRM</b>\n
-            • 📚 <b>CareerWill + PDF</b>\n
-            • 🎓 <b>Khan GS</b>\n
-            • 🎓 <b>Study Iq DRM</b>\n
-            • 🚀 <b>APPX + APPX Enc PDF</b>\n
-            • 🎓 <b>Vimeo DRM (Allen)</b>\n
-            • 🎓 <b>M3u8 URLs that use cookies (e.g., Shreedhar)</b>\n
-            • 🎓 <b>MPD URLs if the key is known (e.g., Mpd_url?key=--key XX:XX)</b>\n
-            </blockquote>\n\n
-            🚀Enjoy your access for <b>{days} days!</b>\n\n
-            <b><i><blockquote>🤩You can also use a text overlay on the thumbnail. Just send your name in a simple font when the bot asks for the thumbnail URL</b></i></blockquote>
-            <b><i>If you need any assistance, feel free to contact the Bot Admin.</b></i>
+    🎉 <b>Congrats on Joining the Non-DRM Bot Family!</b> 🎉\n\n
+    <b><i>You now have access to download all Non-DRM+AES Encrypted URLs 🔐 including:</b></i>\n\n
+    • 📚 <b>Appx Zip+Encrypted Url</b>
+    • 🎓 <b>Classplus DRM+ NDRM</b>
+    • 🧑‍🏫 <b>PhysicsWallah DRM</b>
+    • 📚 <b>CareerWill + PDF</b>
+    • 🎓 <b>Khan GS</b>
+    • 🎓 <b>Study Iq DRM</b>
+    • 🚀 <b>APPX + APPX Enc PDF</b>
+    • 🎓 <b>Vimeo DRM (Allen)</b>
+    • 🎓 <b>M3u8 URLs that use cookies (e.g., Shreedhar)</b>
+    • 🎓 <b>MPD URLs if the key is known (e.g., Mpd_url?key=--key XX:XX)</b>  
+    <b><i><blockquote>🤩You can also use a text overlay on the thumbnail. Just send your name in a simple font when the bot asks for the thumbnail URL</b></i></blockquote>
+    <b><i>If you need any assistance, feel free to contact the Bot Admin.</b></i>
 <blockquote><i>💵 Monthly Plan: ₹ 400</blockquote></i>
 <b>If you want to buy membership of the bot, feel free to contact the Bot</b> [𝘼𝙧𝙟𝙪𝙣 😍](https://t.me/Arjun_Presonal_Bot)</b>''')
 # File paths

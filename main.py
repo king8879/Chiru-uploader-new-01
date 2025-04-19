@@ -73,7 +73,7 @@ async def account_login(bot: Client, m: Message):
 <b>🚀 You are not subscribed to any plan yet!</b>
 
 <blockquote><i>💵 Monthly Plan: ₹ 400</blockquote></i>
-<b>If you want to buy membership of the bot, feel free to contact the Bot</b> [𝘼𝙧𝙟𝙪𝙣 😍](https://t.me/Arjun_babe)</b>''')
+<b>If you want to buy membership of the bot, feel free to contact the Bot</b> [𝘼𝙧𝙟𝙪𝙣 😍](https://t.me/Arjun_Presonal_Bot)</b>''')
 # File paths
  
 

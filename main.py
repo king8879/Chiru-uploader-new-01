@@ -85,6 +85,25 @@ def write_subscription_data(data):
         for user in data:
             f.write(",".join(user) + "\n")
 
+#read channel data and write channel data
+def read_channels_data():
+    try:
+        if not os.path.exists(CHANNELS_FILE):
+            return []
+        with open(CHANNELS_FILE, "r") as f:
+            return [line.strip() for line in f.readlines()]  # Strip whitespace
+    except Exception as e:
+        logging.error(f"Error reading channels.txt: {str(e)}")
+        return []
+
+def write_channels_data(channels):
+    try:
+        with open(CHANNELS_FILE, "w") as f:
+            for channel in channels:
+                f.write(f"{channel}\n")  # Ensure no extra spaces
+    except Exception as e:
+        logging.error(f"Error writing to channels.txt: {str(e)}")
+
 # Admin-only decorator
 def admin_only(func):
     async def wrapper(client, message: Message):
@@ -202,26 +221,33 @@ def write_channels_data(channels):
 # Modified 4. /add_channel
 @bot.on_message(filters.command("add_channel"))
 async def add_channel(client, message: Message):
-    user_id = str(message.from_user.id)
-    subscription_data = read_subscription_data()
-
-    if not any(user[0] == user_id for user in subscription_data) and user_id != str(YOUR_ADMIN_ID):
-        await message.reply_text("**❌ You are not a premium user.**")
-        return
-
     try:
-         _, channel_id = message.text.split()
+        # Check if user is authorized (premium or admin)
+        user_id = str(message.from_user.id)
+        subscription_data = read_subscription_data()
+        if not any(user[0] == user_id for user in subscription_data) and user_id != str(YOUR_ADMIN_ID):
+            await message.reply_text("❌ You are not authorized.")
+            return
+
+        # Extract channel ID from command
+        command_parts = message.text.split(maxsplit=1)
+        if len(command_parts) < 2:
+            await message.reply_text("⚠️ Invalid format. Use: `/add_channel <channel_id>`")
+            return
+
+        channel_id = command_parts[1].strip()  # Remove whitespace/newlines
+
+        # Read current channels and validate
         channels = read_channels_data()
-        channel_id_str = str(channel_id)  # Convert to string
-        if channel_id_str not in channels:
-            channels.append(channel_id_str)
+        if channel_id not in channels:
+            channels.append(channel_id)
             write_channels_data(channels)
-            await message.reply_text(f"✅ Channel/Group ID `{channel_id}` Added Successfully.")
+            await message.reply_text(f"✅ Added Channel ID: `{channel_id}`")
         else:
-            await message.reply_text(f"ℹ️ Channel/Group ID `{channel_id}` is already in the list.")
-    # ... [Rest of the code] ...
-except ValueError:
-        await message.reply_text("⚠️ Invalid format. Use: /add_channel <channel_id>")
+            await message.reply_text(f"ℹ️ Channel `{channel_id}` already exists.")
+
+    except Exception as e:
+        await message.reply_text(f"❌ Error: {str(e)}")
 
 # Modified 5. /remove_channel
 @bot.on_message(filters.command("remove_channel"))
@@ -285,13 +311,15 @@ async def restart_handler(_, m):
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 @bot.on_message(filters.command("arjun"))
 async def account_login(bot: Client, m: Message):
-    # Check if the message is from a channel/group or private chat
-    if m.chat.type in ["channel", "supergroup", "group"]:
-        # Check if the channel/group is allowed
-        allowed_channels = read_channels_data()
-        if str(m.chat.id) not in allowed_channels:
-            await m.reply_text("❌ This channel/group is not authorized.")
-            return
+    try:
+        # Check if the command is used in a channel/group
+        if m.chat.type in ["channel", "supergroup", "group"]:
+            allowed_channels = read_channels_data()
+            channel_id = str(m.chat.id)  # Convert to string
+            if channel_id not in allowed_channels:
+                await m.reply_text("❌ This channel is not authorized. Use `/add_channel` first.")
+                return
+        # ... rest of the /arjun code ...
     else:
         # Private chat: Check user subscription
         user_id = str(m.from_user.id)

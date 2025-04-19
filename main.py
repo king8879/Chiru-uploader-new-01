@@ -320,7 +320,7 @@ async def account_login(bot: Client, m: Message):
                 await m.reply_text("❌ This channel is not authorized. Use `/add_channel` first.")
                 return
         # ... rest of the /arjun code ...
-    else:
+
         # Private chat: Check user subscription
         user_id = str(m.from_user.id)
         subscription_data = read_subscription_data()

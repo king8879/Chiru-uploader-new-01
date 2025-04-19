@@ -292,7 +292,7 @@ async def restart_handler(_, m):
 async def arjun_command(client, message: Message):
     chat_id = message.chat.id
     await message.reply_text
-        return          
+              
     editable = await m.reply_text("**Please Send TXT file for download**")
     input: Message = await bot.listen(editable.chat.id)
     y = await input.download()

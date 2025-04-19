@@ -210,15 +210,17 @@ async def add_channel(client, message: Message):
         return
 
     try:
-        _, channel_id = message.text.split()
+         _, channel_id = message.text.split()
         channels = read_channels_data()
-        if channel_id not in channels:
-            channels.append(channel_id)
+        channel_id_str = str(channel_id)  # Convert to string
+        if channel_id_str not in channels:
+            channels.append(channel_id_str)
             write_channels_data(channels)
             await message.reply_text(f"✅ Channel/Group ID `{channel_id}` Added Successfully.")
         else:
             await message.reply_text(f"ℹ️ Channel/Group ID `{channel_id}` is already in the list.")
-    except ValueError:
+    # ... [Rest of the code] ...
+except ValueError:
         await message.reply_text("⚠️ Invalid format. Use: /add_channel <channel_id>")
 
 # Modified 5. /remove_channel
@@ -283,23 +285,34 @@ async def restart_handler(_, m):
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 @bot.on_message(filters.command("arjun"))
 async def account_login(bot: Client, m: Message):
-   # if m.chat.type == "private":
-    user_id = str(m.from_user.id)
-    subscription_data = read_subscription_data()
-    if not any(user[0] == user_id for user in subscription_data):
-        await m.reply_text("❌ You are not a premium user. Please upgrade your subscription! 💎")
-        return 
-              
+    # Check if the message is from a channel/group or private chat
+    if m.chat.type in ["channel", "supergroup", "group"]:
+        # Check if the channel/group is allowed
+        allowed_channels = read_channels_data()
+        if str(m.chat.id) not in allowed_channels:
+            await m.reply_text("❌ This channel/group is not authorized.")
+            return
+    else:
+        # Private chat: Check user subscription
+        user_id = str(m.from_user.id)
+        subscription_data = read_subscription_data()
+        if user_id != str(YOUR_ADMIN_ID) and not any(user[0] == user_id for user in subscription_data):
+            await m.reply_text("❌ You are not a premium user. Please upgrade your subscription! 💎")
+            return
+
+    # Rest of the /arjun command code remains unchanged
     editable = await m.reply_text("**Please Send TXT file for download**")
     input: Message = await bot.listen(editable.chat.id)
     y = await input.download()
-    file_name, ext = os.path.splitext(os.path.basename(y))  # Extract filename & extension
+    file_name, ext = os.path.splitext(os.path.basename(y))
 
-    if file_name.endswith("_helper"):  # ✅ Check if filename ends with "_helper"
-        x = decrypt_file_txt(y)  # Decrypt the file
+    if file_name.endswith("_helper"):
+        x = decrypt_file_txt(y)
         await input.delete(True)
     else:
-        x = y 
+        x = y
+
+    # ... [Rest of the existing /arjun command code] ...
 
 
     path = f"./downloads/{m.chat.id}"

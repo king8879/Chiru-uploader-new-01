@@ -51,26 +51,28 @@ token_cp ='eyJjb3Vyc2VJZCI6IjQ1NjY4NyIsInR1dG9ySWQiOm51bGwsIm9yZ0lkIjo0ODA2MTksI
 async def account_login(bot: Client, m: Message):                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
     await m.reply_text('''🎉 <b>Welcome to DRM Bot! </b>🎉
     
-<b>You can have access to download all Non-DRM+Decrypted DRM Bot 🔐 including:</b>
-<blockquote><i>
-   • 📚 Appx Zip
-   • 🎓 Classplus DRM+ NDRM
-   • 🧑‍🏫 PhysicsWallah DRM
-   • 📚 CareerWill + PDF
-   • 🎓 Khan GS
-   • 🎓 Study Iq DRM
-   • 🚀 APPX + APPX DEC PDF
-   • 🎓 Vimeo Protection
-   • 🎓 Brightcove Protection
-   • 🎓 Visionias Protection
-   • 🎓 Zoom Video
-   • 🎓 All Non DRM+DEC DRM
-   • 🎓 MPD URLs if the key is known (e.g., Mpd_url?key=key XX:XX)
-</blockquote></i>
-<b>🚀 You are not subscribed to any plan yet!</b>
+ (
+            f"🎉 <b>Congrats {first_name} on Joining the Non-DRM Bot Family!</b> 🎉\n\n"
+            f"<b><i>You now have access to download all Non-DRM+AES Encrypted URLs 🔐 including:</b></i>\n\n"
+            f"<blockquote>"
+            f"   • 📚 <b>Appx Zip+Encrypted Url</b>\n"
+            f"   • 🎓 <b>Classplus DRM+ NDRM</b>\n"
+            f"   • 🧑‍🏫 <b>PhysicsWallah DRM</b>\n"
+            f"   • 📚 <b>CareerWill + PDF</b>\n"
+            f"   • 🎓 <b>Khan GS</b>\n"
+            f"   • 🎓 <b>Study Iq DRM</b>\n"
+            f"   • 🚀 <b>APPX + APPX Enc PDF</b>\n"
+            f"   • 🎓 <b>Vimeo DRM (Allen)</b>\n"
+            f"   • 🎓 <b>M3u8 URLs that use cookies (e.g., Shreedhar)</b>\n"
+            f"   • 🎓 <b>MPD URLs if the key is known (e.g., Mpd_url?key=--key XX:XX)</b>\n"
+            f"</blockquote>\n\n"
+            f"🚀Enjoy your access for <b>{days} days!</b>\n\n"
+            f"<b><i><blockquote>🤩You can also use a text overlay on the thumbnail. Just send your name in a simple font when the bot asks for the thumbnail URL</b></i></blockquote>"
+            f"<b><i>If you need any assistance, feel free to contact the Bot Admin.</b></i>"
+        )
 
 <blockquote><i>💵 Monthly Plan: ₹ 400</blockquote></i>
-<b>If you want to buy membership of the bot, feel free to contact the Bot</b> [𝘼𝙧𝙟𝙪𝙣 😍](https://t.me/Arjun_babe)</b>''')
+<b>If you want to buy membership of the bot, feel free to contact the Bot</b> [𝘼𝙧𝙟𝙪𝙣 😍](https://t.me/Arjun_Presonal_Bot)</b>''')
 # File paths
 SUBSCRIPTION_FILE = "subscription_data.txt"
 

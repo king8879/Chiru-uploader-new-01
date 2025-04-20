@@ -311,8 +311,8 @@ async def remove_all_channels(client, message: Message):
     write_channels_data([])
     await message.reply_text("✅ **All Channels/Groups have been removed successfully.**")
 
-@bot.on_message(filters.command("guide"))
-async def guide_handler(client: Client, message: Message):
+@bot.on_message(filters.command("help"))
+async def help_handler(client: Client, message: Message):
     guide_text = (
       "🌟 **Welcome to the Bot Guide** 🌟\n\n"
       "/start : To Check Bot Is Alive Or Not\n"
@@ -323,7 +323,7 @@ async def guide_handler(client: Client, message: Message):
       "/add_channel : To add New Channel\n"
       "/remove_channel : To remove all the channels\n"
       "/myplan : To check Your Active Membership\n\n"
-      "Contact Me For Premium :☠ ᷧ𝐀𝐑𝐉𝐔𝐍™☠⃯ᷢ(tg:/user?50=) "
+      "Contact Me For Premium :☠ ᷧ𝐀𝐑𝐉𝐔𝐍™☠⃯ᷢ(tg:/user?=5034929962) "
     )
     await message.reply_text(guide_text)
 

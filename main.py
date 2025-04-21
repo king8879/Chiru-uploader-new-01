@@ -689,8 +689,7 @@ async def arjun(bot: Client, m: Message):
                             continue
                           
                 elif 'encrypted.m' in url:  
-                   Show = f"✈️ 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 ✈️\n\n┠ 📈 Total Links = {len(links)}\n┠ 💥 Currently On = {str(count).zfill(3)}\n\n**📩 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐈𝐍𝐆 📩**\n\n**🧚🏻‍♂️ Title** : {name}\n├── **Extention** : {MR}\n├── **Resolution** : {raw_text2}\n├── **Url** : `Kya karega URL dekh ke  BSDK 👻👻`\n├── **Thumbnail** : `Baad Mai dak lana`\n├── **Bot Made By** : 𝘼𝙧𝙟𝙪𝙣 😍" 
-                   prog = await m.reply_text(Show)  
+                   Show = f"✈️ 𝐏𝐑𝐎𝐆𝐑𝐄𝐒𝐒 ✈️\n\n┠ 📈 Total Links = {len(links)}\n┠ 💥 Currently On = {str(count).zfill(3)}\n\n**📩 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐈𝐍𝐆 📩**\n\n**🧚🏻‍♂️ Title** : {name}\n├── **Extention** : {MR}\n├── **Resolution** : {raw_text2}\n├── **Url** : `Kya karega URL dekh ke  BSDK 👻👻`\n├── **Thumbnail** : `Baad Mai dak lana`\n├── **Bot Made By** : **[☠⃯ᷢ ⷷ ᷧ𝐀𝐑𝐉𝐔𝐍™⃯ᷢ ⷷ😍]**"                 prog = await m.reply_text(Show)  
                    res_file = await helper.download_and_decrypt_video(url, cmd, name, appxkey)  
                    filename = res_file  
 

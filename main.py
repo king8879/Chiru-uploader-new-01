@@ -65,7 +65,7 @@ async def account_login(bot: Client, m: Message):
     
     <b><i>If you need any assistance, feel free to contact the Bot Admin.</b></i>
 <blockquote><i>💵 Monthly Plan: ₹ 600</blockquote></i>
-<b>If you want to buy membership of the bot, feel free to contact the Bot</b> [𝘼𝙧𝙟𝙪𝙣 😍](https://t.me/Arjun_Presonal_Bot)</b>''')
+<b>If you want to buy membership of the bot, feel free to contact the Bot</b> [☠⃯ᷢ ⷷ ᷧ𝐀𝐑𝐉𝐔𝐍™⃯ᷢ ⷷ😍](https://t.me/Arjun_Presonal_Bot)</b>''')
 # File paths
 SUBSCRIPTION_FILE = "subscription_data.txt"
 

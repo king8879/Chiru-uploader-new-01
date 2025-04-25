@@ -71,7 +71,7 @@ async def account_login(bot: Client, m: Message):
 <b>🚀 You are not subscribed to any plan yet!</b>
 
 <blockquote><i>💵 Monthly Plan: ₹ 400</blockquote></i>
-<b>If you want to buy membership of the bot, feel free to contact the Bot</b> [🅱🅴🅰🆂🆃👑](https://t.me/chiru52)</b>''')
+<b>If you want to buy membership of the bot, feel free to contact the Bot</b> [𝕰𝖓𝖌𝖎𝖓𝖊𝖊𝖗𝖘 𝕭𝖆𝖇𝖚™](https://t.me/Engineersbabuupdates)</b>''')
 # File paths
 SUBSCRIPTION_FILE = "subscription_data.txt"
 
